@@ -49,20 +49,17 @@ namespace CMP1903_A1_2324
         //this method rolls all three dice and returns the sum of all 3 values
         public int game(bool show) //initialises method 'game' 
         {
-            Die d1 = new Die(); //creates 3 objects of the Die class
+            Die d1 = new Die(); //initialises 3 objects of the Die class
             Die d2 = new Die();
             Die d3 = new Die();
 
-            d1.Roll(); //calls the 'Roll' method in the Die class under the object 'd1'
-            roll1 = d1.value; //stores the die value in a public integer
-            d2.Roll(); //calls the 'Roll' method in the Die class under the object 'd2'
-            roll2 = d2.value;
-            d3.Roll(); //calls the 'Roll' method in the Die class under the object 'd3'
-            roll3 = d3.value;
+            roll1 = d1.Roll(show); //calls the 'Roll' method in the Die class under the object 'd1' and stores the return value
+            roll2 = d2.Roll(show); //calls the 'Roll' method in the Die class under the object 'd2' and stores the return value
+            roll3 = d3.Roll(show); //calls the 'Roll' method in the Die class under the object 'd3' and stores the return value
 
             if (show == true) //checks the boolean value 'show' if the value of each die should be displayed to the user
             {
-                Console.WriteLine($"\nDie 1 = {roll1}"); //outputs the value of each die to the user
+                Console.WriteLine($"\n\nDie 1 = {roll1}"); //outputs the value of each die to the user
                 Console.WriteLine($"Die 2 = {roll2}");
                 Console.WriteLine($"Die 3 = {roll3}");
             }
