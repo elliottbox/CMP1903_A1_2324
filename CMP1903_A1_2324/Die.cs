@@ -24,43 +24,48 @@ namespace CMP1903_A1_2324
         //Method
 
         //this method generates a random number and returns it
-        public int Roll() //initialises method 'Roll'
+        public int Roll(bool show) //initialises method 'Roll'
         {
-            string choice = " ";
-            bool loop = true;
-            while (loop == true)
+            string choice = " "; //creates local variable to store user decision of re-rolling
+            bool loop = true; //creates boolean variable to control circulation of while loop
+            while (loop == true) //while loop created so user can re-do input if it does not meet requirements
             {
                 Random rnd = new Random(); //creates a random number 
-                value = rnd.Next(1, 6); //stores random nubmer in set range of 1-6 in public variable 'value'
-
-                try
+                value = rnd.Next(1, 6); //stores random number in set range of 1-6 in public variable 'value'
+                if (show == false)
                 {
-                    Console.WriteLine($"number rolled = {value}");
+                    return value;
+                }
 
+                try //attempts to accept user input
+                {
+                    Console.WriteLine($"\nnumber rolled = {value}");
                     Console.WriteLine("Do you want to roll again? (y/n): ");
-                    choice = Console.ReadLine();
+                    choice = Console.ReadLine(); //stores user entered text into string 'choice'
                 }
-                catch (ArgumentNullException)
+                catch (ArgumentNullException) //catches the exception if the user's input is null  (exception handling)
                 {
-                    Console.WriteLine("No choice entered, please try again...");
+                    Console.WriteLine("invalid input, please try again...\n"); //displays error message to user
                 }
-                catch (FormatException)
+                catch (FormatException) //catches the exception if the user does not enter in the correct format (exception handling)
                 {
-                    Console.WriteLine("you did not input a letter, please try again...");
+                    Console.WriteLine("invalid input, please try again...\n"); //displays error message to user
                 }
 
                 if (choice == "n")
                 {
                     loop = false;
                 }
-                else if (choice != "y" || choice != "n")
+                else if (choice == "y")
+                {
+                    Console.WriteLine("Re-rolling...");
+                }
+                else
                 {
                     Console.WriteLine("invalid input, please try again...\n");
-                    loop = false;
                 }
-
             }
-            return value;
+            return value; //returns value of die 
         }
     }
 }
