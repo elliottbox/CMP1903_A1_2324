@@ -42,8 +42,9 @@ namespace CMP1903_A1_2324
         //this method tests the Die class, testing if the values of the dice are in the correct range
         public void Die_Test()
         {
+            show = false;
             Die d_test = new Die(); //initialises new object of the Die class
-            d_test.Roll(); //calls the 'Roll' function in the Die class
+            d_test.Roll(show); //calls the 'Roll' function in the Die class
             Debug.Assert(d_test.value >= 1, "Die value is below range"); //raises a debug error if the value of the die is below the range (e.g - >1)
             Debug.Assert(d_test.value <= 6, "Die value is above range"); //raises a debug error if the value of the die is above the range (e.g - <6)
 
