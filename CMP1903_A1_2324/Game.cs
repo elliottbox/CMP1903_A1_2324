@@ -53,9 +53,9 @@ namespace CMP1903_A1_2324
             Die d2 = new Die();
             Die d3 = new Die();
 
-            roll1 = d1.Roll(show); //calls the 'Roll' method in the Die class under the object 'd1' and stores the return value
-            roll2 = d2.Roll(show); //calls the 'Roll' method in the Die class under the object 'd2' and stores the return value
-            roll3 = d3.Roll(show); //calls the 'Roll' method in the Die class under the object 'd3' and stores the return value
+            roll1 = d1.Roll(show); //calls the 'Roll' method in the Die class under a Die object and stores the return value
+            roll2 = d2.Roll(show); 
+            roll3 = d3.Roll(show); 
 
             if (show == true) //checks the boolean value 'show' if the value of each die should be displayed to the user
             {
