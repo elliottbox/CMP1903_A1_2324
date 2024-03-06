@@ -45,8 +45,8 @@ namespace CMP1903_A1_2324
             show = false;
             Die d_test = new Die(); //initialises new object of the Die class
             d_test.Roll(show); //calls the 'Roll' function in the Die class
-            Debug.Assert(d_test.value >= 1, "Die value is below range"); //raises a debug error if the value of the die is below the range (e.g - >1)
-            Debug.Assert(d_test.value <= 6, "Die value is above range"); //raises a debug error if the value of the die is above the range (e.g - <6)
+            Debug.Assert(d_test.value >= 1, "Die value is below range"); //raises a debug error if the value of the die is out of the range 
+            Debug.Assert(d_test.value <= 6, "Die value is above range"); 
 
             Console.WriteLine("TEST 2 --> roll for test die is in boundries of 1-6, Test Passed for Die class...");
             Console.ReadKey();
