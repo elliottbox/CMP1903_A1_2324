@@ -31,7 +31,7 @@ namespace CMP1903_A1_2324
             while (loop == true) //while loop created so user can re-do input if it does not meet requirements
             {
                 Random rnd = new Random(); //creates a random number 
-                value = rnd.Next(1, 6); //stores random number in set range of 1-6 in public variable 'value'
+                value = rnd.Next(1, 7); //stores random number in set range of 1-6 in public variable 'value'
                 if (show == false)
                 {
                     return value;
