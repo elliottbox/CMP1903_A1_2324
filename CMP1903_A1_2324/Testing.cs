@@ -49,6 +49,7 @@ namespace CMP1903_A1_2324
             Debug.Assert(d_test.value <= 6, "Die value is above range"); //raises a debug error if the value of the die is above the range (e.g - <6)
 
             Console.WriteLine("TEST 2 --> roll for test die is in boundries of 1-6, Test Passed for Die class...");
+            Console.ReadKey();
         }
     }
 }
